@@ -1,0 +1,80 @@
+body {
+    background-color: #cad2c5;
+    color: #2f3e46;
+    font-family: Montserat, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2{
+    color: #354F52;
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    background-color: #52796F;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav a:hover{
+    color:#84A98C;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tarjeta img{
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+.tarjeta {
+    background-color: #84A98C;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+}
+.tarjeta:first-child{
+    flex: 2;
+    min-width: 200px;
+    max-width: 70%;
+    text-align: center;
+}
+
+.tarjeta:last-child{
+    flex: 1;
+    min-width: 100px;
+}
+@media (max-width: 768px) {
+    .tarjeta {
+        width: 100%;
+    }
+}
+
+footer {
+    background-color: #354F52;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
