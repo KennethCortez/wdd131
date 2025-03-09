@@ -4,6 +4,9 @@ body {
     font-family: Montserat, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2{
@@ -40,6 +43,7 @@ main {
     justify-content: space-between;
     gap: 20px;
     padding: 20px;
+    flex: 1;
 }
 
 .tarjeta img{
@@ -77,4 +81,5 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+    margin-top: auto;
 }
