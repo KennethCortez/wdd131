@@ -1,4 +1,4 @@
-@media screen and (min-with: 500px){
+@media screen and (min-width: 500px){
     header {
         background-color: black;
         font-style: italic;
