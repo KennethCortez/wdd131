@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (hamburger && navMenu) {
         hamburger.addEventListener("click", function () {
-            // Cambiar la visibilidad del menú cuando se hace clic en el botón hamburguesa
+            
             navMenu.classList.toggle("open");
             const isOpen = navMenu.classList.contains("open");
             hamburger.setAttribute("aria-expanded", isOpen);

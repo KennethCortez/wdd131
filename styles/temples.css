@@ -53,15 +53,9 @@ nav a:hover{
 }
 
 .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background-color: var(--navbar-color);
-    width: 200px;
-    padding: 10px;
-    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
 }
 
 .nav-menu.open {
