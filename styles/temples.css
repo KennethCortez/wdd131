@@ -1,0 +1,110 @@
+:root {
+    /* Colors */
+    --general-background-color: #CAD2C5;
+    --headersandbuttons-color: #84A98C;
+    --navbar-color: #52796F;
+    --titlesorfooter-color: #354F52;
+    --textanddetails-color: #2F3E46;
+
+    /* Fonts */
+    --Titles-font: 'Montserrat', sans-serif;
+    --text-font: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--general-background-color);
+    color: var(--textanddetails-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    position: relative;
+    background-color: var(--navbar-color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: var(--Titles-font);
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav a:hover{
+    color:#84A98C;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: var(--navbar-color);
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-menu.open {
+    display: flex;
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+figure {
+    background-color: var(--general-background-color);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+img {
+    width: 100%; 
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    grid-column: 1 / -1;
+    font-family: var(--Titles-font);
+}
+
+p, figcaption, a {
+    font-family: var(--text-font);
+}
+
+footer {
+    background-color: #354F52;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
