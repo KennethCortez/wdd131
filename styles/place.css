@@ -5,13 +5,18 @@
     --Titles-font: 'Montserrat', sans-serif;
     --text-font: 'Open Sans', sans-serif;
 }
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-}   
+}
 
 h1 {
     color: white;
@@ -43,24 +48,39 @@ header {
     margin-right: 10px;
 }
 
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transform: scale(1.1);
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { transform: scale(1.1) translateY(-10px); }
+    50% { transform: scale(1.15) translateY(0px); }
+    100% { transform: scale(1.1) translateY(-10px); }
+}
+
 main {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: url('/images/santaanavolcano.webp') no-repeat center/cover;
-    background-attachment: fixed;
-    animation: moveBackground 20s linear infinite;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
-    padding: 20px;
     align-items: start;
-}
-
-@keyframes moveBackground {
-    0% { background-position: center top; }
-    50% { background-position: center center; }
-    100% { background-position: center bottom; }
 }
 
 .container {
@@ -98,7 +118,6 @@ main {
 .weather-box h2 {
     display: inline-flex;
     align-items: center;
-    
 }
 
 .weather-box h2::after {
@@ -106,25 +125,22 @@ main {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background: url('images/weather.svg') no-repeat center/cover;
 }
 
 @media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero img {
+        animation: none;
+    }
+
     main {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0px;
-        background: none;
-    }
-
-    .hero {
-        display: block;
-        width: 100%;
-        height: 300px;
-        background: url('/images/santaanavolcano.webp') no-repeat center/cover;
-        z-index: 1;
-        margin: 0px;
     }
 
     .container {
