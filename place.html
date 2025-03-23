@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="this is a new web for the Santa Ana Vocano">
+    <meta name="author" content="Kenneth Cortez">
+    <link rel="stylesheet" href="styles/place.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Santa Ana Volcano</h1>
+    </header>
+    <main class="container">
+
+        <div class="hero"></div>
+
+        <section class="data-box">
+            <h2>Data</h2>
+            <p>Name: Ilamatepec</p>
+            <p>Altitude: 2,381 MALS</p>
+            <p>Meaning: hill of the old woman</p>
+            <p>Last Eruption: 2005</p>
+        </section>
+
+        <section class="weather-box">
+            <div class="weather-title">
+                <h2>Weather</h2>
+                <img src="images/weather.svg" alt="weather icon">
+            </div>
+            <p>Temperature: <span id="temperature">10</span> °C</p>
+            <p>Wind Speed: <span id="wind-speed">15</span> km/h</p>
+            <p>Wind Chill: <span id="wind-chill">N/A</span></p>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>
+            ©️<span id="currentyear"></span>
+            Kenneth Cortez
+            Sonsonate, El Salvador
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
