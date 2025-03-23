@@ -6,14 +6,12 @@
     --text-font: 'Open Sans', sans-serif;
 }
 
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-}
+}   
 
 h1 {
     color: white;
