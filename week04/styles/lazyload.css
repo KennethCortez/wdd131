@@ -1,0 +1,12 @@
+main {
+    display: block;
+}
+
+.lazyload {
+    opacity: 0;
+    transition: opacity 0.5 ease-in-out;
+}
+
+.lazyloaded {
+    opacity: 1;
+}
