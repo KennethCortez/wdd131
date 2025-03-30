@@ -107,7 +107,7 @@ const temples = [
         location: "San Salvador, El Salvador",
         dedicated: "2011, August, 21",
         area: 27986,
-        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/_temp/135-San-Salvador-El-Salvador-Temple.jpg"
     }
 ];
 
