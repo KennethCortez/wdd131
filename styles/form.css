@@ -23,15 +23,10 @@ body {
     height: 100vh;
 }
 
-.indication {
+.indication, .asterisk {
     color: red;
     text-align: left;
     font-style: italic;
-    font-size: 0.8em;
-}
-
-.asterisk {
-    color: red;
     font-size: 0.8em;
 }
 
