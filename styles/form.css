@@ -45,7 +45,7 @@ label {
     display: block;
 }
 
-label[for="product"], label[for="writtenreview"], label[for="username"], label[for="idate"]{
+label[for="product"], label[for="writtenReview"], label[for="username"], label[for="idate"]{
     font-weight: bold;
     font-size: 1.1em;
 }
