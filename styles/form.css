@@ -23,6 +23,18 @@ body {
     height: 100vh;
 }
 
+.indication {
+    color: red;
+    text-align: left;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+#asterisk {
+    color: red;
+    font-size: 0.8em;
+}
+
 header {
     background-color: var(--headersandbuttons-color);
     color: white;

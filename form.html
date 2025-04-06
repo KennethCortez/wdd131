@@ -17,13 +17,15 @@
     </header>
     <main>
         <form action="review.html" method="get" id="reviewForm" autocomplete="on">
-            <label for="product">Laptop model</label>
+            <p class="indication">* means required</p>
+
+            <label for="product">Laptop model<span id="asterisk">*</span></label>
             <select name="product" id="product" required>
                 <option value="" disabled selected>Select a model</option>
             </select><br><br>
 
             <fieldset>
-                <legend>Overall Rating</legend>
+                <legend>Overall Rating<span id="asterisk">*</span></legend>
 
                 <input type="radio" id="star5" name="rating" value="5" required aria-label="Rating 5 stars">
                 <label for="star5">&#9733;&#9733;&#9733;&#9733;&#9733;</label><br>
@@ -41,13 +43,13 @@
                 <label for="star1">&#9733;</label><br>
             </fieldset><br><br>
 
-            <label for="idate">Purchase date</label>
+            <label for="idate">Purchase date<span id="asterisk">*</span></label>
             <input type="date" name="idate" id="idate" required><br><br>
 
             <fieldset>
-                <legend>Useful Features <span>(Select all that aply)</span></legend>
+                <legend>Useful Features <span>(Select all that aply)</span><span id="asterisk">*</span></legend>
 
-                <input type="checkbox" id="feature1" name="features" value="longbatterylife">
+                <input type="checkbox" id="feature1" name="features" value="longbatterylife" required>
                 <label for="feature1">Long Battery Life</label><br>
 
                 <input type="checkbox" id="feature2" name="features" value="highResolution">
@@ -65,6 +67,8 @@
 
             <label for="username">Write your name<span>(optional)</span></label>
             <input type="text" name="username" id="username" placeholder="Enter your name"><br><br>
+
+            
             
             <input type="submit" value="Submit my review">
         </form>
