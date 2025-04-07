@@ -12,6 +12,14 @@
     <script src="journey.js" defer></script>
 </head>
 <body>
+    <div class="sky">
+        <!-- Mountains -->
+        <img src="images/mountains-vector.svg" alt="Mountains" class="mountains" role="img" aria-hidden="true" />
+    
+        <!-- Clouds (I can duplicate this tag to have multiple clouds) -->
+        <img src="images/cloud1.png" alt="Cloud" class="cloud cloud1" id="cloud1" role="img" aria-hidden="true" />
+        <img src="images/cloud2.png" alt="Cloud" class="cloud cloud2" id="cloud2" role="img" aria-hidden="true" />
+    </div>
     <header>
         <nav>
             <ul>
@@ -43,9 +51,17 @@
                 style="width: 100%; height: 500px;">
             </model-viewer>
         
-            <!-- Message box -->
-            <div class="message" id="message">
-              <p>Breathe deeply... the journey begins.</p>
+            <!-- first textbox -->
+            <div class="message" id="message1">
+                <p>Breathe deeply... the journey begins.</p>
+            </div>
+
+            <div class="message hidden" id="message2">
+                <p>Let go of your worries...</p>
+            </div>
+
+            <div class="message hidden" id="message3">
+                <p>You are safe here.</p>
             </div>
         
           </section>
