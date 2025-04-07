@@ -1,0 +1,43 @@
+.sky {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, #cce0f5, #ffffff);
+  }
+  
+  .mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .cloud {
+    position: absolute;
+    top: 10%;
+    width: 200px;
+    animation: floatClouds 60s linear infinite;
+    z-index: 2;
+    opacity: 0.8;
+  }
+  
+  .cloud1 {
+    left: -300px;
+    animation-delay: 0s;
+  }
+  
+  .cloud2 {
+    left: -600px;
+    animation-delay: 30s;
+  }
+  
+  @keyframes floatClouds {
+    from {
+      transform: translateX(100vw);
+    }
+    to {
+      transform: translateX(200vw);
+    }
+  }
+  
