@@ -1,0 +1,206 @@
+:root {
+    /* Colors */
+    --general-background-color: #CAD2C5;
+    --headersandbuttons-color: #84A98C;
+    --navbar-color: #52796F;
+    --titlesorfooter-color: #354F52;
+    --textanddetails-color: #2F3E46;
+
+    /* Fonts */
+    --Titles-font: 'Montserrat', sans-serif;
+    --text-font: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--text-font);
+    background-color: var(--general-background-color);
+    color: var(--textanddetails-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.indication, .asterisk {
+    color: red;
+    text-align: left;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+header {
+    background-color: var(--headersandbuttons-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+form {
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    display: block;
+}
+
+label[for="product"], label[for="writtenReview"], label[for="username"], label[for="idate"]{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="date"]{
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1rem;
+}
+
+label[for="feature1"], label[for="feature2"], label[for="feature3"], label[for="feature4"] {
+    display: inline-block;
+    font-size: 1em;
+    color: var(--textanddetails-color); 
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: var(--headersandbuttons-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--navbar-color);
+}
+
+fieldset {
+    border: 2px solid var(--general-background-color);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--titlesorfooter-color);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+    color: #ffcc00;
+}
+
+span {
+    font-weight: normal;
+    font-style: italic;
+    color: #999;
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer {
+    background-color: #354F52;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+
+/* Mobile specific styles */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
+
+    form {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    textarea,
+    select,
+    input[type="date"] {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    input[type="submit"] {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+
+    legend {
+        font-size: 1.1rem;
+    }
+
+    input[type="radio"] + label {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}

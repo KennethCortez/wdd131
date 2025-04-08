@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD - Temples</title>
+    <meta name="description" content="This is a new web of the pictures of my favorite temples">
+    <meta name="author" content="Kenneth Cortez">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css" media="screen and (min-width: 768px)">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- JavaScript -->
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <p>Temple Album</p>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            <div class="nav-menu">
+                <a id="homeButton">Home</a>    
+                <a id="oldButton">Old</a>
+                <a id="newButton">New</a>
+                <a id="largeButton">Large</a>
+                <a id="smallButton">Small</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Temple</h1>
+        <h2>My favorite temples</h2>
+        <div id="templeContainer"></div>
+    </main>
+
+    <footer>
+        <p>©️ Kenneth Cortez, Sonsonate, El Salvador</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

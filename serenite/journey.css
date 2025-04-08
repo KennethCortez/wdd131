@@ -1,0 +1,84 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .sky {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    animation: skyScroll 60s linear infinite;
+  }
+  
+  @keyframes skyScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 0; }
+  }
+  
+  .cloud {
+    position: absolute;
+    width: 200px;
+    opacity: 0.7;
+    animation: floatClouds 60s linear infinite;
+  }
+  
+  .cloud1 { top: 20%; left: -200px; animation-delay: 0s; }
+  .cloud2 { top: 40%; left: -300px; animation-delay: 10s; }
+  
+  @keyframes floatClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(120vw); }
+  }
+  
+  .mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  
+  .balloon {
+    animation: floatBalloon 20s ease-in-out infinite alternate;
+  }
+  
+  @keyframes floatBalloon {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+  }
+  
+  .message {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    max-width: 80%;
+    font-size: 1.2rem;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    z-index: 5;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px) translateX(-50%); }
+    to { opacity: 1; transform: translateY(0) translateX(-50%); }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
