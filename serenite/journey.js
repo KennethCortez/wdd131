@@ -1,31 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const messages = [
-      document.getElementById("message1"),
-      document.getElementById("message2"),
-      document.getElementById("message3")
-    ];
-  
-    let index = 0;
-  
-    const showNextMessage = () => {
-      if (index >= messages.length) return;
-  
-      const msg = messages[index];
-      msg.classList.remove("hidden");
-  
-      // Ocultar después de 6 segundos
-      setTimeout(() => {
-        msg.style.animation = "fadeOut 1s ease forwards";
-      }, 5000);
-  
-      index++;
-  
-      // Mostrar el siguiente después de 10 segundos
-      if (index < messages.length) {
-        setTimeout(showNextMessage, 10000);
-      }
-    };
-  
-    showNextMessage();
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const main = document.querySelector("main");
+
+if (hamburger && navMenu && main) {
+  hamburger.addEventListener("click", function () {
+    navMenu.classList.toggle("open");
+
+    const isOpen = navMenu.classList.contains("open");
+    hamburger.setAttribute("aria-expanded", isOpen);
+
+    // Aplica o quita el blur
+    main.classList.toggle("blur", isOpen);
   });
-  
+}

@@ -19,6 +19,7 @@ body, html {
   font-family: var(--font-primary);
 }
 
+
 .sky {
   position: fixed;
   top: 0; left: 0;
@@ -41,15 +42,41 @@ body, html {
 .nav-menu {
   display: none;
   flex-direction: column;
+  list-style: none;
   position: absolute;
   top: 60px;
-  right: 10px;
-  background-color: var(--navbar-color);
+  left: 1.5rem;
   width: 200px;
   padding: 10px;
   border-radius: 5px;;
+  color: white;
+  z-index: 1;
 }
 
 .nav-menu.open {
   display: flex;
+}
+
+.nav-menu a {
+  color: black; /* O el color que prefieras */
+  text-decoration: none; /* Elimina el subrayado */
+  height: 100%;
+  padding: 0 30px;
+}
+
+.nav-menu a:visited {
+  color: white; /* Mantén el mismo color para los enlaces visitados */
+}
+
+.nav-menu a:hover {
+  color: #f0f0f0; /* Un color más claro al pasar el mouse (opcional) */
+}
+
+.nav-menu a:active {
+  color: #f0f0f0; /* Un color al presionar (opcional) */
+}
+
+.blur {
+  filter: blur(5px);
+  transition: filter 0.8s ease;
 }
