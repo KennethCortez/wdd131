@@ -1,7 +1,7 @@
 :root {
     /*Colors*/
-    --color-background: ;
-    --color-nav: ;
+    --color-background: linear-gradient(to bottom, #9bc3c9, #9bc3c9, #feb47b, #574b6e) ;
+    --color-nav: rgb(255, 255, 255) ;
     --color-text: ;
     --color-title: ;
 
@@ -19,17 +19,7 @@ body, html {
   font-family: var(--font-primary);
 }
 
-
-.sky {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-}
-
+/*Navigation bar*/
 .hamburger {
   display: block;
   background: none;
@@ -49,7 +39,7 @@ body, html {
   width: 200px;
   padding: 10px;
   border-radius: 5px;;
-  color: white;
+  color: var(--color-nav);
   z-index: 1;
 }
 
@@ -79,4 +69,79 @@ body, html {
 .blur {
   filter: blur(5px);
   transition: filter 0.8s ease;
+}
+
+/* parallax background */
+
+.parallax-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+/* common styles for layers */
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; 
+}
+
+.layer0 img {
+  position: absolute;
+  width: 75%;
+  height: auto;
+  top: 30%;
+  left: 0;
+  transform-origin: center center;
+  transition: transform 0.1s linear;
+
+}
+
+.layer1 img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 23%;
+  right: 60%;
+  transform-origin: center center;
+}
+
+/* Capa 1: montañas - movida lentamente */
+.layer2 img {
+  position: absolute;
+  width: 125%;
+  height: auto;
+  top: 25%;
+  left: 0;
+  transform-origin: center center;
+  transition: transform 0.1s linear;
+}
+
+/* Capa 2: nubes - movida a una velocidad intermedia */
+.layer3 img:first-child {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 30%;
+  left: 0;
+  transform-origin: center center;
+  transition: transform 0.1s linear;
+}
+
+.layer3 img:last-child {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 20%;
+  left: 30%;
+  transform-origin: center center;
+  transition: transform 0.1s linear;
 }

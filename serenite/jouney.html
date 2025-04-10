@@ -25,16 +25,40 @@
         </nav>
     </header>
 
-    <main>
+    <!-- Background with parallax efect-->
+    <div class="parallax-container">
+
+        <!-- back mountains-->
+        <div class="parallax-layer layer0">
+            <img src="images/mountain1.png" alt="Mountains" class="mountains1" role="img" aria-hidden="true" />
+        </div>
+
+        <!-- layer 0 the back clouds-->
+        <div class="parallax-layer layer1">
+            <img src="images/cloud.png" alt="Cloud" class="cloud cloud0" id="cloud0" role="img" aria-hidden="true" />
+            <img src="images/cloud.png" alt="Cloud" class="cloud cloud02" id="cloud02" role="img" aria-hidden="true" />
+        </div>
+
+        <!-- layer 1: mountains -->
+        <div class="parallax-layer layer2">
+            <img src="images/mountain3.png" alt="Mountains" class="mountains" role="img" aria-hidden="true" />
+        </div>
+    
+        <!-- layer 2: clouds -->
+        <div class="parallax-layer layer3">
+            <img src="images/cloud.png" alt="Cloud" class="cloud cloud1" id="cloud1" role="img" aria-hidden="true" />
+            <img src="images/cloud.png" alt="Cloud" class="cloud cloud2" id="cloud2" role="img" aria-hidden="true" />
+        </div>
+
+        <!-- Capa 3: globos de aire (si deseas agregar algo más cercano) 
+        <div class="parallax-layer layer3">
+            <img src="images/balloon.png" alt="Hot Air Balloon" class="balloon" role="img" aria-hidden="true" />
+        </div>-->
+    </div>
+
+    <!--<main>
         <section class="scenario" id="scenario">
-            <div class="sky">
-                <!-- Mountains -->
-                <img src="images/mountains-vector.svg" alt="Mountains" class="mountains" role="img" aria-hidden="true" />
             
-                <!-- Clouds (I can duplicate this tag to have multiple clouds) -->
-                <img src="images/cloud1.png" alt="Cloud" class="cloud cloud1" id="cloud1" role="img" aria-hidden="true" />
-                <img src="images/cloud2.png" alt="Cloud" class="cloud cloud2" id="cloud2" role="img" aria-hidden="true" />
-            </div>
             <model-viewer 
                 src="assets/models/hot-air-balloon.glb" 
                 alt="Hot air balloon model" 
@@ -45,7 +69,7 @@
                 style="width: 100%; height: 500px;">
             </model-viewer>
         
-            <!-- first textbox -->
+             first textbox 
             <div class="message" id="message1">
                 <p>Breathe deeply... the journey begins.</p>
             </div>
@@ -58,7 +82,7 @@
                 <p>You are safe here.</p>
             </div>
         
-          </section>
+          </section>-->
     </main>
     
     <audio id="music" autoplay loop>
@@ -66,7 +90,7 @@
         Your browser does not support HTML5 audio.
     </audio>
 
-    <footer>
+    <!--<footer>
         <p>&copy; 2025 Serenité. All rights reserved.</p>
     </footer>
 </body>
