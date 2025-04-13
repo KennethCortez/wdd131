@@ -9,7 +9,6 @@ if (hamburger && navMenu && main) {
     const isOpen = navMenu.classList.contains("open");
     hamburger.setAttribute("aria-expanded", isOpen);
 
-    // Aplica o quita el blur
     main.classList.toggle("blur", isOpen);
   });
 }
@@ -20,7 +19,9 @@ let mountainX = 0;
 let mountainY = 0;
 let cloud0X = 0;
 let cloud02X = 0;
-
+let cloud11X = 0;
+let cloud22X = 0;
+let cloud00X = 0;
 
 function animateParallax() {
   const cloud0 = document.getElementById("cloud0");
@@ -29,41 +30,38 @@ function animateParallax() {
   const cloud2 = document.getElementById("cloud2");
   const mountains = document.querySelector(".layer2 img");
   const mountains0 = document.querySelector(".layer0 img");
+  const cloud11 = document.getElementById("cloud11");
+  const cloud22 = document.getElementById("cloud22");
+  const cloud00 = document.getElementById("cloud00");
 
   // velocidades
   const cloud1Speed = 1.0;
   const cloud2Speed = 0.15;
   const mountainSpeed = 0.1;
   const mountain0Speed = 0.05;
-  
+  const cloud11Speed = 1.0;
   const cloud0Speed = 0.05;  // más lento = más lejano
   const cloud02Speed = 0.2;
+  const cloud22Speed = 0.08;
+  const cloud00Speed = 0.1;
 
   cloud1X += cloud1Speed;
   cloud2X += cloud2Speed;
   mountainX += mountainSpeed;
   mountainY += mountain0Speed;
   cloud0X += cloud0Speed;
-cloud02X += cloud02Speed;
+  cloud02X += cloud02Speed;
+  cloud11X += cloud11Speed;
+  cloud22X += cloud22Speed;
+  cloud00X += cloud00Speed;
   
-
-  // ancho base para reiniciar la imagen (ajusta según tus imágenes si es necesario)
-  const resetWidth = window.innerWidth;
-
-  // si pasa todo el ancho, vuelve al inicio sin corte visual
-  if (cloud1X >= resetWidth) cloud1X = 0;
-  if (cloud2X >= resetWidth) cloud2X = 0;
-  if (mountainX >= resetWidth) mountainX = 0;
-  if (mountainY >= resetWidth) mountainY = 0;
-  if (cloud0X >= resetWidth) cloud0X = 0;
-  if (cloud02X >= resetWidth) cloud02X = 0;
-
-
   cloud1.style.transform = `translateX(${-cloud1X}px)`;
   cloud2.style.transform = `translateX(${-cloud2X}px)`;
   cloud0.style.transform = `translateX(${-cloud0X}px)`;
   cloud02.style.transform = `translateX(${-cloud02X}px)`;
-
+  cloud11.style.transform = `translateX(${-cloud11X}px)`;
+  cloud22.style.transform = `translateX(${-cloud22X}px)`;
+  cloud00.style.transform = `translateX(${-cloud00X}px)`;
   mountains.style.transform = `translateX(${-mountainX}px)`;
   mountains0.style.transform = `translateX(${-mountainY}px)`;
 

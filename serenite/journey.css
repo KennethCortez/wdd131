@@ -48,22 +48,22 @@ body, html {
 }
 
 .nav-menu a {
-  color: black; /* O el color que prefieras */
-  text-decoration: none; /* Elimina el subrayado */
+  color: var(--color-nav);
+  text-decoration: none;
   height: 100%;
   padding: 0 30px;
 }
 
 .nav-menu a:visited {
-  color: white; /* Mantén el mismo color para los enlaces visitados */
+  color: var(--color-nav);
 }
 
 .nav-menu a:hover {
-  color: #f0f0f0; /* Un color más claro al pasar el mouse (opcional) */
+  color: rgb(233, 202, 192);
 }
 
 .nav-menu a:active {
-  color: #f0f0f0; /* Un color al presionar (opcional) */
+  color: var(--color-nav);
 }
 
 .blur {
@@ -73,7 +73,7 @@ body, html {
 
 /* parallax background */
 
-.parallax-container {
+.parallaxcontainer {
   position: fixed;
   top: 0;
   left: 0;
@@ -94,6 +94,16 @@ body, html {
   pointer-events: none; 
 }
 
+.layer00 img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 25%;
+  transform-origin: center center;
+  transition: transform 0.1s linear;
+}
+
 .layer0 img {
   position: absolute;
   width: 75%;
@@ -105,7 +115,7 @@ body, html {
 
 }
 
-.layer1 img {
+.layer1 :nth-child(1) {
   position: absolute;
   width: 100%;
   height: auto;
@@ -114,7 +124,27 @@ body, html {
   transform-origin: center center;
 }
 
-/* Capa 1: montañas - movida lentamente */
+.layer1 :nth-child(2) {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 25%;
+  left: 70%;
+  transform-origin: center center;
+}
+
+.layer1 :nth-child(3) {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 20%;
+  left: 10%;
+  transform-origin: center center;
+}
+
+
+
+/* layer 2: front mountains */
 .layer2 img {
   position: absolute;
   width: 125%;
@@ -125,13 +155,23 @@ body, html {
   transition: transform 0.1s linear;
 }
 
-/* Capa 2: nubes - movida a una velocidad intermedia */
+/* Layer 3: front clouds */
 .layer3 img:first-child {
   position: absolute;
   width: 100%;
   height: auto;
   top: 30%;
   left: 0;
+  transform-origin: center center;
+  transition: transform 0.1s linear;
+}
+
+.layer3 img:nth-child(2) {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 20%;
+  left: 60%;
   transform-origin: center center;
   transition: transform 0.1s linear;
 }
@@ -152,7 +192,7 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Asegúrate de que esté al fondo */
+  z-index: 0; 
   background: transparent;
 }
 
@@ -162,7 +202,8 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* no interfiere con clics */
-  z-index: 2; /* arriba del fondo/parallax pero debajo del contenido */
+  pointer-events: none;
+  z-index: 2; 
   background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 100%);
 }
+
