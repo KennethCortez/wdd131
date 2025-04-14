@@ -12,6 +12,12 @@
     <script src="journey.js" defer></script>
 </head>
 <body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">Loading...</div>
+    </div>
+
     <header>
         <nav>
             <button class="hamburger" aria-label="Toggle navigation">
@@ -56,28 +62,26 @@
             <img src="images/cloud.png" alt="Cloud" class="cloud cloud11" id="cloud11" role="img" aria-hidden="true" />
             <img src="images/cloud.png" alt="Cloud" class="cloud cloud2" id="cloud2" role="img" aria-hidden="true" />
         </div>
-
-        <!-- Capa 3: globos de aire (si deseas agregar algo más cercano) 
-        <div class="parallax-layer layer3">
-            <img src="images/balloon.png" alt="Hot Air Balloon" class="balloon" role="img" aria-hidden="true" />
-        </div>-->
     </div>
 
     <main>
         <section class="scenario" id="scenario">
-            
-            <model-viewer 
-                src="assets/models/hot-air-balloon.glb" 
-                alt="Hot air balloon model" 
-                aria-label="A calm hot air balloon floating in the sky"
-                auto-rotate 
-                camera-controls 
-                disable-zoom 
-                style="width: 100%; height: 500px;">
-            </model-viewer>
-        
-             first textbox 
-            <div class="message" id="message1">
+            <!--Balloon-->
+            <div class="balloon-wrapper">
+                <model-viewer 
+                    src="assets/models/hot_air_balloon_low_poly.glb" 
+                    alt="Hot air balloon model" 
+                    auto-rotate
+                    disable-zoom 
+                    class="balloon">
+                </model-viewer>
+              </div>              
+
+            <div class="message hidden" id="message1">
+                <p>Use Spacebar or click to control your altitude</p>
+            </div>
+
+            <div class="message hidden" id="message1">
                 <p>Breathe deeply... the journey begins.</p>
             </div>
 
@@ -97,9 +101,9 @@
         Your browser does not support HTML5 audio.
     </audio>
 
-    <!--<footer
+    <footer>
         <p>&copy; 2025 Serenité. All rights reserved.</p>
-    </footer> --> 
+    </footer>
     <div class="vignette"></div>
 </body>
 </html>

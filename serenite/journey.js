@@ -1,76 +1,62 @@
+// ======= Hamburger menu and blur efect =======
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-const main = document.querySelector("main");
+const background = document.querySelector("main");
 
-if (hamburger && navMenu && main) {
+if (hamburger && navMenu && background) {
   hamburger.addEventListener("click", function () {
     navMenu.classList.toggle("open");
 
     const isOpen = navMenu.classList.contains("open");
     hamburger.setAttribute("aria-expanded", isOpen);
 
-    main.classList.toggle("blur", isOpen);
+    background.classList.toggle("blur", isOpen);
   });
 }
 
-let cloud1X = 0;
-let cloud2X = 0;
-let mountainX = 0;
-let mountainY = 0;
-let cloud0X = 0;
-let cloud02X = 0;
-let cloud11X = 0;
-let cloud22X = 0;
-let cloud00X = 0;
+// ======= Parallax background =======
+const elements = {
+  cloud0: document.getElementById("cloud0"),
+  cloud02: document.getElementById("cloud02"),
+  cloud1: document.getElementById("cloud1"),
+  cloud2: document.getElementById("cloud2"),
+  cloud11: document.getElementById("cloud11"),
+  cloud22: document.getElementById("cloud22"),
+  cloud00: document.getElementById("cloud00"),
+  mountains: document.querySelector(".layer2 img"),
+  mountains0: document.querySelector(".layer0 img")
+};
+
+const speeds = {
+  cloud0: 0.05,
+  cloud02: 0.2,
+  cloud1: 1.0,
+  cloud2: 0.15,
+  cloud11: 1.0,
+  cloud22: 0.08,
+  cloud00: 0.1,
+  mountains: 0.1,
+  mountains0: 0.05
+};
+
+const positions = {};
+for (const key in speeds) {
+  positions[key] = 0;
+}
 
 function animateParallax() {
-  const cloud0 = document.getElementById("cloud0");
-  const cloud02 = document.getElementById("cloud02");
-  const cloud1 = document.getElementById("cloud1");
-  const cloud2 = document.getElementById("cloud2");
-  const mountains = document.querySelector(".layer2 img");
-  const mountains0 = document.querySelector(".layer0 img");
-  const cloud11 = document.getElementById("cloud11");
-  const cloud22 = document.getElementById("cloud22");
-  const cloud00 = document.getElementById("cloud00");
-
-  // velocidades
-  const cloud1Speed = 1.0;
-  const cloud2Speed = 0.15;
-  const mountainSpeed = 0.1;
-  const mountain0Speed = 0.05;
-  const cloud11Speed = 1.0;
-  const cloud0Speed = 0.05;  // más lento = más lejano
-  const cloud02Speed = 0.2;
-  const cloud22Speed = 0.08;
-  const cloud00Speed = 0.1;
-
-  cloud1X += cloud1Speed;
-  cloud2X += cloud2Speed;
-  mountainX += mountainSpeed;
-  mountainY += mountain0Speed;
-  cloud0X += cloud0Speed;
-  cloud02X += cloud02Speed;
-  cloud11X += cloud11Speed;
-  cloud22X += cloud22Speed;
-  cloud00X += cloud00Speed;
-  
-  cloud1.style.transform = `translateX(${-cloud1X}px)`;
-  cloud2.style.transform = `translateX(${-cloud2X}px)`;
-  cloud0.style.transform = `translateX(${-cloud0X}px)`;
-  cloud02.style.transform = `translateX(${-cloud02X}px)`;
-  cloud11.style.transform = `translateX(${-cloud11X}px)`;
-  cloud22.style.transform = `translateX(${-cloud22X}px)`;
-  cloud00.style.transform = `translateX(${-cloud00X}px)`;
-  mountains.style.transform = `translateX(${-mountainX}px)`;
-  mountains0.style.transform = `translateX(${-mountainY}px)`;
-
+  for (const key in elements) {
+    if (elements[key]) {
+      positions[key] += speeds[key];
+      elements[key].style.transform = `translateX(${-positions[key]}px)`;
+    }
+  }
   requestAnimationFrame(animateParallax);
 }
 
 animateParallax();
 
-
+// ======= Animated Stars =======
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
@@ -123,3 +109,68 @@ window.addEventListener("resize", () => {
 resizeCanvas();
 createStars();
 animateStars();
+
+// ======= Balloon =======
+const balloon = document.querySelector(".balloon-wrapper");
+
+let posX = 0;
+let posY = 10;
+let isAscending = false;
+
+function animateBalloon() {
+  posX += 0.19;
+
+  if (isAscending) {
+    posY += 0.8;
+    if (posY > 300) posY = 300;
+  } else {
+    posY -= 0.4;
+    if (posY < 0) posY = 0;
+  }
+
+  balloon.style.transform = `translate(${posX}px, -${posY}%)`;
+  requestAnimationFrame(animateBalloon);
+}
+
+["keydown", "mousedown"].forEach(evt => {
+  document.addEventListener(evt, (e) => {
+    if (evt === "mousedown" || e.code === "Space") isAscending = true;
+  });
+});
+
+["keyup", "mouseup"].forEach(evt => {
+  document.addEventListener(evt, (e) => {
+    if (evt === "mouseup" || e.code === "Space") isAscending = false;
+  });
+});
+
+animateBalloon();
+
+// ======= Loading page =======
+window.addEventListener('load', function () {
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('main-content').style.display = 'block';
+});
+
+// ======= Secuential Messages =======
+document.addEventListener("DOMContentLoaded", () => {
+  const messages = document.querySelectorAll(".message");
+  const interval = 7000;
+  let current = 0;
+
+  function showNextMessage() {
+    if (current > 0) {
+      messages[current - 1].classList.remove("show");
+      messages[current - 1].classList.add("hidden");
+    }
+
+    if (current < messages.length) {
+      messages[current].classList.remove("hidden");
+      messages[current].classList.add("show");
+      current++;
+      setTimeout(showNextMessage, interval);
+    }
+  }
+
+  showNextMessage();
+});
