@@ -30,7 +30,7 @@ const elements = {
 const speeds = {
   cloud0: 0.05,
   cloud02: 0.2,
-  cloud1: 1.0,
+  cloud1: 1.5,
   cloud2: 0.15,
   cloud11: 1.0,
   cloud22: 0.08,
@@ -121,7 +121,7 @@ function animateBalloon() {
   posX += 0.19;
 
   if (isAscending) {
-    posY += 0.8;
+    posY += 1.0;
     if (posY > 300) posY = 300;
   } else {
     posY -= 0.4;
@@ -155,7 +155,13 @@ window.addEventListener('load', function () {
 // ======= Secuential Messages =======
 document.addEventListener("DOMContentLoaded", () => {
   const messages = document.querySelectorAll(".message");
-  const interval = 7000;
+  const inspirationMessages = document.querySelectorAll(".messageInspiration");
+  const reflectionmessages = document.querySelectorAll(".messageReflection");
+  const reflectionInterval = 15000;
+  const interval = 4000;
+  const inspirationInterval = 5000;
+  const pauseBeforeInspiration = 6000;
+  const pauseBeforeReflection = 10000;
   let current = 0;
 
   function showNextMessage() {
@@ -169,8 +175,42 @@ document.addEventListener("DOMContentLoaded", () => {
       messages[current].classList.add("show");
       current++;
       setTimeout(showNextMessage, interval);
+    } else {
+      setTimeout(() => {
+        showInspirationMessages(0);
+      }, pauseBeforeInspiration);
     }
   }
 
+  function showInspirationMessages(index) {
+    if (index > 0) {
+      inspirationMessages[index - 1].classList.remove("show");
+      inspirationMessages[index - 1].classList.add("hidden");
+    }
+
+    if (index < inspirationMessages.length) {
+      inspirationMessages[index].classList.remove("hidden");
+      inspirationMessages[index].classList.add("show");
+      setTimeout(() => showInspirationMessages(index + 1), inspirationInterval);
+    } else {
+      setTimeout(() => {
+        showRefrectionMessages(0);
+      }, pauseBeforeReflection);
+    }
+  }
+
+  function showRefrectionMessages(index) {
+    if (index > 0) {
+      reflectionmessages[index - 1].classList.remove("show");
+      reflectionmessages[index - 1].classList.add("hidden");
+    }
+
+    if (index < reflectionmessages.length) {
+      reflectionmessages[index].classList.remove("hidden");
+      reflectionmessages[index].classList.add("show");
+      setTimeout(() => showRefrectionMessages(index + 1), reflectionInterval);
+    }
+  }
   showNextMessage();
 });
+

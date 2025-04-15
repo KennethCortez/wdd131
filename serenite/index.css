@@ -1,0 +1,85 @@
+:root {
+    /*Colors*/
+    --color-background: linear-gradient(to bottom,#0d1d2c, #688a81) ;
+    --color-nav: rgb(255, 255, 255) ;
+    --color-text: #ffcc00 ;
+
+    /*Fonts*/
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+}
+
+/*General reset*/
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-primary);
+}
+
+/*Navigation bar*/
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.nav-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  flex-direction: column;
+  list-style: none;
+  position: absolute;
+  top: 60px;
+  left: 1.5rem;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--color-nav);
+  z-index: 1;
+}
+
+.nav-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-menu a {
+  color: var(--color-nav);
+  text-decoration: none;
+  height: 100%;
+  padding: 0 30px;
+}
+
+.nav-menu a:visited {
+  color: var(--color-nav);
+}
+
+.nav-menu a:hover {
+  color: rgb(233, 202, 192);
+}
+
+.nav-menu a:active {
+  color: var(--color-nav);
+}
+
+.blur {
+  filter: blur(5px);
+  transition: filter 0.8s ease;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 0 20px;
+}
