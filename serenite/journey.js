@@ -122,7 +122,7 @@ function animateBalloon() {
 
   if (isAscending) {
     posY += 1.0;
-    if (posY > 300) posY = 300;
+    if (posY > 450) posY = 450;
   } else {
     posY -= 0.4;
     if (posY < 0) posY = 0;

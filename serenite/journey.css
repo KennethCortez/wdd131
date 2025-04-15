@@ -314,7 +314,7 @@ model-viewer.balloon {
 footer {
   position: fixed;
   bottom: 0%;
-  right: 35%;
+  right: 0;
   width: 100%;
   color: var(--color-background);
   text-align: center;

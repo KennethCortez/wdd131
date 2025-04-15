@@ -12,22 +12,27 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to a peaceful journey</h1>
         <nav>
-            <ul>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="journey.html">Start the journey</a></li>
                 <li><a href="reflection.html">Ponder</a></li>
             </ul>
         </nav>
     </header>
+    <canvas id="stars"></canvas>
     <main>
-        <section>
-            <p>Welcome to a journey of calm and meditation. Relax, breathe and allow your mind to be at peace.</p>
+        <section class="welcome">
+            <h1>Welcome to a journey of calm and meditation.</h1>
+            <p>Relax, breathe and Select where you would like to go.</p>
             <div class="image-buttons">
                 <!-- Imagen 1 como botón -->
                 <a href="journey.html" class="btn-start">
-                    <img src="image1.jpg" alt="Start your journey">
+                    <img src="images/thejourney.png" alt="Start your journey">
+                    <p>The Journey</p>
                 </a>
                 <!-- Imagen 2 como botón -->
                 <a href="reflection.html" class="btn-ponder">
