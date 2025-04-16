@@ -132,15 +132,15 @@ function animateBalloon() {
   requestAnimationFrame(animateBalloon);
 }
 
-["keydown", "mousedown"].forEach(evt => {
+["keydown", "mousedown", "touchstart"].forEach(evt => {
   document.addEventListener(evt, (e) => {
-    if (evt === "mousedown" || e.code === "Space") isAscending = true;
+    if (evt === "mousedown" || evt === "touchstart" || e.code === "Space") isAscending = true;
   });
 });
 
-["keyup", "mouseup"].forEach(evt => {
+["keyup", "mouseup", "touchend"].forEach(evt => {
   document.addEventListener(evt, (e) => {
-    if (evt === "mouseup" || e.code === "Space") isAscending = false;
+    if (evt === "mouseup" || evt === "touchend" || e.code === "Space") isAscending = false;
   });
 });
 
@@ -213,4 +213,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   showNextMessage();
 });
-

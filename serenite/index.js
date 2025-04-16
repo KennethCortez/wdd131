@@ -32,7 +32,7 @@ function createStars() {
     stars.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 1.5,
+      radius: Math.random() * 1.9,
       alpha: Math.random(),
       delta: Math.random() * 0.02
     });
@@ -67,3 +67,8 @@ window.addEventListener("resize", () => {
 resizeCanvas();
 createStars();
 animateStars();
+
+window.addEventListener("DOMContentLoaded", () => {
+  const music = document.getElementById("music");
+  music.volume = 0.5; // volumen al 30%
+});

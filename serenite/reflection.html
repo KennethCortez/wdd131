@@ -6,34 +6,47 @@
     <title>Serenité - Reflection</title>
     <meta name="description" content="Serenité - Reflection, a space to reflect on your journey.">
     <meta name="author" content="Kenneth Cortez">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reflection.css">
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Montserrat&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <script src="reflection.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="journey.html">Start the journey</a></li>
                 <li><a href="reflection.html">Ponder</a></li>
             </ul>
         </nav>
     </header>
-
+    <canvas id="stars"></canvas>
     <main>
         <section>
-            <h2>Reflexiona sobre tu viaje</h2>
-            <form id="form-reflexion">
-                <label for="respuesta">¿Qué sientes después de este viaje?</label>
-                <textarea id="respuesta" name="respuesta" rows="4" cols="50" placeholder="Escribe tus pensamientos aquí..."></textarea>
-                <button type="submit">Enviar Reflexión</button>
+            <h2>Reflect on Your Journey</h2>
+            <form id="form-reflection">
+                <label for="feeling">How do you feel after this journey?</label>
+                <textarea id="feeling" name="feeling" rows="4" placeholder="Share your emotions..."></textarea>
+
+                <label for="thought">What thought was most present during the experience?</label>
+                <textarea id="thought" name="thought" rows="4" placeholder="Write down your thoughts..."></textarea>
+
+                <label for="future">How do you plan to apply this calm in your daily life?</label>
+                <textarea id="future" name="future" rows="4" placeholder="Your answer..."></textarea>
+
+                <button type="submit">Submit Reflection</button>
             </form>
         </section>
     </main>
-
+    <audio id="music" autoplay loop>
+        <source src="assets/Dreiton (First Half).mp3" type="audio/mpeg">
+        Your browser does not support HTML5 audio.
+    </audio>
     <footer>
-        <p>&copy; 2025 Viaje Interior. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Serenité. Music from C418, the use of this song is only for college project.</p>
     </footer>
 
     <script src="js/script.js"></script>

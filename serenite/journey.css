@@ -86,9 +86,9 @@ body, html {
   z-index: -1;
   overflow: hidden;
   background: var(--color-background);
-  background-size: cover; /* Asegura que el fondo cubra todo el área */
-  background-position: center center; /* Centra el fondo */
-  background-attachment: fixed; /* Fijo para el parallax en escritorio */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 /* common styles for layers */
@@ -321,4 +321,33 @@ footer {
   padding: 3px;
   font-size: 1rem;
   font-family: var(--font-secondary);
+}
+
+@media (max-width: 480px) {
+  
+  .hamburger {
+    font-size: 1.5rem; 
+  }
+
+  .nav-menu {
+    top: 50px;
+    width: 100%;
+  }
+
+  .nav-menu a {
+    padding: 10px 20px;
+  }
+
+  .parallaxcontainer {
+    background-attachment: scroll;
+  }
+
+  .message, .messageInspiration, .messageReflection {
+    font-size: 2rem;
+  }
+
+  .balloon-wrapper {
+    left: 10%;
+    width: 150px;
+  }
 }
