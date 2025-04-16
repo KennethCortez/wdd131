@@ -216,5 +216,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   const music = document.getElementById("music");
-  music.volume = 0.5;
+  music.volume = 0.9;
 });
