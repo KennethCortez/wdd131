@@ -213,3 +213,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   showNextMessage();
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+  const music = document.getElementById("music");
+  music.volume = 0.5;
+});

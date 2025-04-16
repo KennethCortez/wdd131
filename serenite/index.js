@@ -70,5 +70,5 @@ animateStars();
 
 window.addEventListener("DOMContentLoaded", () => {
   const music = document.getElementById("music");
-  music.volume = 0.5; // volumen al 30%
+  music.volume = 0.5;
 });

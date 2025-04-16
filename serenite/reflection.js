@@ -67,3 +67,8 @@ window.addEventListener("resize", () => {
 resizeCanvas();
 createStars();
 animateStars();
+
+window.addEventListener("DOMContentLoaded", () => {
+    const music = document.getElementById("music");
+    music.volume = 0.5;
+  });
